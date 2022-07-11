@@ -1,0 +1,8 @@
+@use './variable' as *;
+
+@mixin separate-border {
+	width: 80px;
+	height: 3px;
+	margin: 12px 0;
+	background-color: $bc-lightgray;
+}
