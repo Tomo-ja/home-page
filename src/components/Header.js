@@ -4,7 +4,7 @@ import linkedinIcon from '../images/icon_linkedin.svg'
 
 export default function Header() {
   return (
-	<div className='header'>
+	<div id='welcome' className='header'>
 		<div className="inner">
 			<h1 className='header__name'>Tomonao Hashiguchi</h1>
 			<p className="header__jobTitle">Web developer</p>
