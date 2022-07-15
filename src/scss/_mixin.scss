@@ -6,3 +6,21 @@
 	margin: 12px 0;
 	background-color: $bc-lightgray;
 }
+
+@mixin mobile {
+	@media (max-width: 490px) {
+		@content; 
+	}
+}
+
+@mixin tabletS {
+	@media (max-width: 730px) {
+		@content;
+	}
+}
+
+@mixin tabletL {
+	@media (max-width: 1000px) {
+		@content;
+	}
+}
