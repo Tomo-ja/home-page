@@ -1,4 +1,4 @@
-import Header from './components/Header';
+import Welcome from './components/Welcome';
 import Navbar from './components/Navbar';
 import './App.scss';
 
@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
         <Navbar />
-        <Header />
+        <Welcome />
     </div>
   );
 }

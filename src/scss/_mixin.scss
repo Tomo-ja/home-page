@@ -7,6 +7,20 @@
 	background-color: $bc-lightgray;
 }
 
+@mixin maskBgImage {
+	// apply on ::before
+	// set display relative and z-index 0 on base element
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: $bc-mask;
+	z-index: -1;
+}
+
 @mixin mobile {
 	@media (max-width: 490px) {
 		@content; 
