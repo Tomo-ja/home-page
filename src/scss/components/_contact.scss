@@ -1,0 +1,57 @@
+@use '../variable' as *;
+
+.contact{
+	&__formBox{
+		padding: 10px;
+		background-image: repeating-linear-gradient(135deg, $bc-blue 0px, $bc-blue 30px, transparent 30px, transparent 50px, $bc-blue 50px, $bc-blue 80px, transparent 80px, transparent 100px);
+	}
+	&__form{
+		padding: 45px 7.5%;
+		background-color: white;
+
+		&__group{
+			margin-bottom: 30px;
+			position: relative;
+		}
+		&__input{
+			width: 100%;
+			padding-block: 10px;
+			border-bottom: 1px solid $bc-lightgray;
+			font-size: $fz-m;
+
+			&:focus ~ label,
+			&:valid ~ label{
+				top: -14px;
+				font-size: $fz-mini;
+				color: $fc-blue;
+			}
+			&:focus ~ .contact__form__border::before{
+				width: 100%;
+			}
+		}
+		&__label{
+			position: absolute;
+			top: 10px;
+			left: 0px;
+			color: $fc-gray;
+			font-size: $fz-s;
+			pointer-events: none;
+			transition: 300ms ease all;
+		}
+		&__border{
+			display: block;
+			position: relative;
+			width: 100%;
+			&::before{
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0%;
+				height: 2px;
+				width: 0;
+				background-color:$bc-blue;
+				transition: 300ms ease all;
+			}
+		}
+	}
+}

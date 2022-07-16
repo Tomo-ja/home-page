@@ -34,6 +34,9 @@ h4{
 	font-weight: 400;
 	line-height: 1.45;
 }
+section{
+	margin-bottom: 100px;
+}
 a{
 	color: $fc-black;
 	font-family: $ff-raleway;
@@ -44,6 +47,13 @@ a{
 img{
 	max-width: 100%;
 	max-height: 100%;
+}
+input{
+	display: block;
+}
+textarea{
+	display: block;
+	resize: none;
 }
 
 .inner{

@@ -1,9 +1,11 @@
 // font-size
 $fz-xxl: 48px;
-$fz-xl: 24px;
+$fz-xl: 30px;
+$fz-ll: 24px;
 $fz-l: 22px;
 $fz-m: 19px;
-$fz-s: 15px;
+$fz-s: 16px;
+$fz-mini: 12px;
 
 
 // font family
@@ -16,11 +18,15 @@ $bc-mask: rgba(118,96,48,0.35);
 $bc-transparent: rgba(0,0,0,.25);
 $bc-orange: #ecc061;
 $bc-green: #268060;
+$bc-blue: #2196F3;
 
 $fc-black: #50555c;
+$fc-gray: #999999;
 $fc-white: #ffffff;
 $fc-green: #268060;
-$fc-blue: #4d90b3;
+$fc-blue: #2196F3;
+// $fc-blue: #4d90b3;
 
 $bc-lightgray: #dddddd;
 $bc-gray: #777777;
+$bc-blue: #83b3db;

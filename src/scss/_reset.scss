@@ -41,6 +41,9 @@ table{
 }
 
 input{
-    -webkit-appearance: none;
-    border-radius: 0;
+    all: unset;
+}
+
+textarea{
+    all: unset;
 }
