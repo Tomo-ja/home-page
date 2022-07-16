@@ -1,10 +1,11 @@
 import React from 'react'
+import Header from './Header'
 import githubIcon from '../images/icon_github.svg'
 import linkedinIcon from '../images/icon_linkedin.svg'
 
 export default function WelcomeHeader() {
   return (
-	<>
+	<div className='welcome__header'>
 		<h1 className='sectionHeader__title'>Tomonao Hashiguchi</h1>
 		<p className="sectionHeader__subTitle welcome__header__subTitle">Web developer</p>
 		<div className="welcome__header__iconBox">
@@ -15,6 +16,6 @@ export default function WelcomeHeader() {
 				<img className='welcome__header__iconBox__item' src={githubIcon} alt='github icon' />
 			</a>
 		</div>
-	</>
+	</div>
   )
 }

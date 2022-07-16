@@ -6,6 +6,7 @@
 	width: 100vw;
 	background-size: cover;
 	background-position: center top;
+	background-attachment: fixed;
 	padding-top: 100px;
 	padding-bottom: 50px;
 	z-index: 0;
@@ -14,11 +15,10 @@
 		@include mixin.maskBgImage()
 	}
 	&__title{
-		margin-bottom: 20px;
+		margin-bottom: 10px;
 	}
 
 	&__subTitle{
-		margin-bottom: 50px;
 		color: $fc-white;
 		font-family: $ff-roboto;
 		font-size: $fz-m;

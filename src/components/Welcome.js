@@ -6,8 +6,8 @@ import headerBgImg from '../images/bg_welcomeHeader.jpg'
 
 export default function Welcome() {
   return (
-	<div id='welcome' className=''>
+	<section id='welcome' className='welcome'>
 		<SectionHeader bgImg={headerBgImg} content={<WelcomeHeader />} />
-	</div>
+	</section>
   )
 }
