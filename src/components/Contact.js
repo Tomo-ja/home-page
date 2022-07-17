@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SectionHeader from './SectionHeader'
 import Header from './Header'
 import headerBgImg from '../images/bg_welcomeHeader.jpg'
 import emailSendIcon from '../images/icon_email-send.svg'
 
 export default function Contact() {
+
+	const [error, setError] = useState(true)
+
+	function isValidEmail(email){
+		return /\S+@\S+\.\S+/.test(email)
+	}
+
   return (
 	<section id='contact' className='contact'>
 		<SectionHeader 
@@ -44,7 +51,10 @@ export default function Contact() {
 						<span className='contact__form__border'></span>
 						<label for="message" className='contact__form__label'>What's your message?</label>
 					</div>
-					<button className='contact__form__button'>
+					<button 
+						className='contact__form__button'
+						disabled={error}
+					>
 						<img 
 							src={emailSendIcon} 
 							alt="paper craft icon"
