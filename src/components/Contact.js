@@ -2,6 +2,7 @@ import React from 'react'
 import SectionHeader from './SectionHeader'
 import Header from './Header'
 import headerBgImg from '../images/bg_welcomeHeader.jpg'
+import emailSendIcon from '../images/icon_email-send.svg'
 
 export default function Contact() {
   return (
@@ -43,7 +44,14 @@ export default function Contact() {
 						<span className='contact__form__border'></span>
 						<label for="message" className='contact__form__label'>What's your message?</label>
 					</div>
-					<input type="submit" value="Send!" />
+					<button className='contact__form__button'>
+						<img 
+							src={emailSendIcon} 
+							alt="paper craft icon"
+							className='contact__form__button__icon'
+						/>
+						<span className='contact__form__button__text'>Send</span>
+					</button>
 				</form>
 			</div>
 		</div>

@@ -20,7 +20,7 @@
 			font-size: $fz-m;
 
 			&:focus ~ label,
-			&:valid ~ label{
+			&:valid ~ label {
 				top: -14px;
 				font-size: $fz-mini;
 				color: $fc-blue;
@@ -51,6 +51,41 @@
 				width: 0;
 				background-color:$bc-blue;
 				transition: 300ms ease all;
+			}
+		}
+		&__button{
+			display: flex;
+			width: 200px;
+			margin-inline: auto;
+			padding-block: 10px;
+			border-radius: 20px;
+			justify-content: center;
+			align-items: center;
+			background-color: $bc-blue;
+			transition: all ease 0.3s;
+			&__icon{
+				display: block;
+				width: 20px;
+				height: 20px;
+				margin-right: 10px;
+				margin-left: -20px;
+				filter: invert(99%) sepia(0%) saturate(735%) hue-rotate(144deg) brightness(117%) contrast(100%);			}
+			&__text{
+				color: $fc-white;
+				font-size: $fz-s;
+			}
+			&:disabled{
+				background-color: $bc-lightgray;
+			}
+			&:disabled{
+				.contact__form__button{
+					&__icon{
+						filter: invert(64%) sepia(2%) saturate(36%) hue-rotate(314deg) brightness(95%) contrast(91%);
+					}
+					&__text{
+						color: $fc-gray;
+					}
+				}
 			}
 		}
 	}
