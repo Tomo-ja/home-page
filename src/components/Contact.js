@@ -3,13 +3,38 @@ import SectionHeader from './SectionHeader'
 import Header from './Header'
 import headerBgImg from '../images/bg_welcomeHeader.jpg'
 import emailSendIcon from '../images/icon_email-send.svg'
+import { isValidDateValue } from '@testing-library/user-event/dist/utils'
 
 export default function Contact() {
 
-	const [error, setError] = useState(true)
+	const [errors, setErrors] = useState({nameError: true, emailError: true, messageError: true})
 
 	function isValidEmail(email){
 		return /\S+@\S+\.\S+/.test(email)
+	}
+
+	function changeName(e){
+		if (e.target.value.trim() === "") {
+			setErrors(prev =>  {return {...prev, nameError: true}})
+		} else {
+			setErrors(prev =>  {return {...prev, nameError: false}})
+		}
+	}
+	function changeEmail(e){
+		if (e.target.value.trim() === "") {
+			setErrors(prev =>  {return {...prev, emailError: true}})
+		} else if (!isValidEmail(e.target.value)) {
+			setErrors(prev =>  {return {...prev, emailError: true}})
+		} else {
+			setErrors(prev =>  {return {...prev, emailError: false}})
+		}
+	}
+	function changeMessage(e){
+		if (e.target.value.trim() === "") {
+			setErrors(prev =>  {return {...prev, messageError: true}})
+		} else {
+			setErrors(prev =>  {return {...prev, messageError: false}})
+		}
 	}
 
   return (
@@ -26,7 +51,8 @@ export default function Contact() {
 							type="text" 
 							className='contact__form__input'
 							id='guestName'
-							required 
+							onChange={changeName}
+							required
 						/>
 						<span className='contact__form__border'></span>
 						<label for="guestName" className='contact__form__label'>How can I call you?</label>
@@ -36,6 +62,7 @@ export default function Contact() {
 							type="text" 
 							className='contact__form__input'
 							id='guestEmail'
+							onChange={changeEmail}
 							required 
 						/>
 						<span className='contact__form__border'></span>
@@ -46,6 +73,7 @@ export default function Contact() {
 							id='message'
 							className='contact__form__input'
 							rows="6"
+							onChange={changeMessage}
 							required
 						/>
 						<span className='contact__form__border'></span>
@@ -53,7 +81,7 @@ export default function Contact() {
 					</div>
 					<button 
 						className='contact__form__button'
-						disabled={error}
+						disabled={!Object.values(errors).every(value => value !== true)}
 					>
 						<img 
 							src={emailSendIcon} 

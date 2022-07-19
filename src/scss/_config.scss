@@ -1,5 +1,8 @@
 @use './variable' as *;
 
+html{
+	scroll-behavior: smooth;
+}
 body{
 	color: $fc-black;
 	font-family: $ff-raleway;
