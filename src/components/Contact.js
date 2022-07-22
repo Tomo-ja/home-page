@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
+import emailjs from 'emailjs-com'
 import SectionHeader from './SectionHeader'
 import Header from './Header'
 import headerBgImg from '../images/bg_welcomeHeader.jpg'
 import emailSendIcon from '../images/icon_email-send.svg'
-import { isValidDateValue } from '@testing-library/user-event/dist/utils'
 
 export default function Contact() {
 
 	const [errors, setErrors] = useState({nameError: true, emailError: true, messageError: true})
+	const [emailInfo, setEmailInfo] = useState({name: null, email: null, message: null})
 
 	function isValidEmail(email){
 		return /\S+@\S+\.\S+/.test(email)
@@ -19,6 +20,7 @@ export default function Contact() {
 		} else {
 			setErrors(prev =>  {return {...prev, nameError: false}})
 		}
+		setEmailInfo(prev => {return {...prev, name: e.target.value}})
 	}
 	function changeEmail(e){
 		if (e.target.value.trim() === "") {
@@ -28,6 +30,7 @@ export default function Contact() {
 		} else {
 			setErrors(prev =>  {return {...prev, emailError: false}})
 		}
+		setEmailInfo(prev => {return {...prev, email: e.target.value}})
 	}
 	function changeMessage(e){
 		if (e.target.value.trim() === "") {
@@ -35,6 +38,16 @@ export default function Contact() {
 		} else {
 			setErrors(prev =>  {return {...prev, messageError: false}})
 		}
+		setEmailInfo(prev => {return {...prev, message: e.target.value}})
+	}
+	function sendEmail(e){
+		e.preventDefault()
+
+		emailjs.send("service_z2xo4ga", "template_q7ukh3j", emailInfo, "k8tCtYZttijiK5X3L").then(function(response){
+			console.log('success')
+		}, function(error){
+			console.log("something wrong", error)
+		})
 	}
 
   return (
@@ -82,6 +95,7 @@ export default function Contact() {
 					<button 
 						className='contact__form__button'
 						disabled={!Object.values(errors).every(value => value !== true)}
+						onClick={sendEmail}
 					>
 						<img 
 							src={emailSendIcon} 
