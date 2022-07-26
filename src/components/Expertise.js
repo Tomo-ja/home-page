@@ -14,10 +14,11 @@ export default function Expertise() {
 			bgImg={headerBgImg}
 			content={<Header title="Skills" subTitle="What I excel in" />}
 		/>
-	{ projectData.map( project => {
-		return <Project projectData={project} />
-	})}
-
+		<div className="inner">
+			{ projectData.map( project => {
+				return <Project projectData={project} />
+			})}
+		</div>
 	</section>
   )
 }

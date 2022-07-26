@@ -1,7 +1,7 @@
 @use './variable' as *;
 
-@mixin separate-border {
-	width: 80px;
+@mixin separate-border($length) {
+	width: $length;
 	height: 3px;
 	margin: 12px 0;
 	background-color: $bc-lightgray;

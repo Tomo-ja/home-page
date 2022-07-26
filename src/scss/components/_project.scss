@@ -1,0 +1,48 @@
+@use '../variable' as *;
+@use '../mixin';
+
+.project{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	&__imgContainer{
+		flex: 0.6;
+		&__img{
+
+		}
+	}
+	&__explain{
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		flex: 0.35;
+		&__name{
+
+		}
+		&__skills{
+			display: flex;
+			margin-bottom: 20px;
+		}
+		&__skill + &__skill{
+			margin-left: 10px;
+		}
+		&__description{
+			margin-bottom: 20px;
+			text-align: end;
+		}
+		&__iconBox{
+			display: flex;
+			a {
+				display: block;
+			}
+			&__item {
+				width: 30px;
+				height: 30px;
+				margin-left: 20px;
+			}
+		}
+	}
+	&__separator{
+		@include mixin.separate-border(75%);
+	}
+}

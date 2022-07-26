@@ -26,13 +26,13 @@ export default function Project({projectData}) {
 				{projectData.description}
 			</div>
 			<div className="project__explain__iconBox">
-			<a href={projectData.githubUrl}>
-				<img className='project__explain__iconBox__item' src={githubIcon} alt='github icon' />
-			</a>
-			<a href={projectData.productUrl}>
-				<img className='project__explain__iconBox__item' src={exportIcon} alt='export icon' />
-			</a>
-		</div>
+				<a href={projectData.githubUrl}>
+					<img className='project__explain__iconBox__item' src={githubIcon} alt='github icon' />
+				</a>
+				<a href={projectData.productUrl}>
+					<img className='project__explain__iconBox__item' src={exportIcon} alt='export icon' />
+				</a>
+			</div>
 		</div>
 	</div>
   )
