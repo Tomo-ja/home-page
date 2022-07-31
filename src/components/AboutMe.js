@@ -10,7 +10,14 @@ export default function AboutMe() {
 			bgImg={headerBgImg}
 			content={<Header title="About Me" subTitle="Who I am" />} 
 		/>
+		<div className="inner">
+			<div className="about__me">
 
+			</div>
+			<div className="about__rubeField">
+
+			</div>
+		</div>
 	</section>
   )
 }

@@ -12,7 +12,7 @@ export default function Expertise() {
 	<section id='expertise'>
 		<SectionHeader 
 			bgImg={headerBgImg}
-			content={<Header title="Skills" subTitle="What I excel in" />}
+			content={<Header title="Projects" subTitle="What I developed" />}
 		/>
 		<div className="inner">
 			{ projectData.map( project => {
