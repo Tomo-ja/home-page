@@ -2,13 +2,19 @@ $edge: 50px;
 
 .cube{
 	position: relative;
-	width: $edge * 4;
-	height: $edge * 4;
+	width: $edge * 2;
+	height: $edge * 2;
+	transform-origin: bottom right 50px;
 	transform-style: preserve-3d;
-	animation: turnInfinite 10s linear 0s infinite normal none running;
-
+	// animation: turnInfinite 10s linear 0s infinite normal none running
 }
 
+.box{
+	position: absolute;
+	width: $edge * 2;
+	height: $edge * 2;
+	transform-style: preserve-3d;
+}
 .box:nth-child(1){
 
 }
@@ -32,12 +38,6 @@ $edge: 50px;
 }
 .box:nth-child(8){
 	transform: translateX($edge * 2) translateY($edge * 2) translateZ($edge * 2);
-}
-.box{
-	position: absolute;
-	width: $edge * 2;
-	height: $edge * 2;
-	transform-style: preserve-3d;
 }
 .box_face{
 	position: absolute;
