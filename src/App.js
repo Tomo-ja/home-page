@@ -3,6 +3,7 @@ import Welcome from './components/Welcome';
 import AboutMe from './components/AboutMe';
 import Expertise from './components/Expertise';
 import Contact from './components/Contact';
+import Cube from './components/Cube';
 
 import './App.scss';
 
@@ -10,11 +11,12 @@ import './App.scss';
 function App() {
   return (
     <div className="App">
-        <Navbar />
+        {/* <Navbar />
         <Welcome />
         <AboutMe />
         <Expertise />
-        <Contact />
+        <Contact /> */}
+        <Cube />
     </div>
   );
 }
